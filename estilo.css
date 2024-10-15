@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,15 +21,18 @@ body {
 
 .imagen-grande {
     flex: 3;
-  	background-color: aquamarine;
-    margin: 5;
+    background-color: aquamarine;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imagen-grande img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-
+    display: block;
 }
 
 .imagenes-pequenas {
@@ -38,19 +41,19 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin-left: 10px;
-    margin: 5;
+    margin: 5px;
 }
 
 .imagenes-pequenas img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
-    border-radius: 8px;
     margin: 10px 0;
-    background-color: aquamarine;
+    border-radius: 8px;
+    border: 2px solid gray; /* Borde pequeño para las imágenes pequeñas */
+    display: block;
 }
 
 .imagenes-pequenas img:hover {
-    border: 5px solid blue; /* Cambié a rojo y aumenté el grosor */
+    border: 5px solid blue;
 }
 
