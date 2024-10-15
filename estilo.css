@@ -49,8 +49,7 @@ body {
     margin: 10px 0;
     background-color: aquamarine;
 }
-
-.imagenes-pequenas img:last-child {
-    margin-bottom: 0;
+imagenes-pequenas img:hover {
+    border: 3px solid #00ff00; /* Cambia el color y el tamaño del borde al pasar el mouse */
 }
 
