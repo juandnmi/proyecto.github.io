@@ -2,19 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO MINERIA</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="imagen-grande">
-            <img src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-diagramas.jpg" alt="Imagen Grande">
+            <img id="imagenGrande" src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-diagramas.jpg" alt="Imagen Grande">
         </div>
         <div class="imagenes-pequenas">
-            <img src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-diagramas.jpg" alt="Imagen Pequeña 1">
-            <img src="imagen-pequena2.jpg" alt="Imagen Pequeña 2">
-            <img src="imagen-pequena3.jpg" alt="Imagen Pequeña 3">
+            <img src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-diagramas.jpg" alt="Imagen Pequeña 1" onclick="cambiarImagen(this.src)">
+            <img src="https://media.gq.com.mx/photos/5f6ce732bc946e88f6c96320/16:9/w_1600,c_limit/goky%20ultra%20instinto.jpg" alt="Imagen Pequeña 2" onclick="cambiarImagen(this.src)">
+            <img src="https://via.placeholder.com/150" alt="Imagen Pequeña 3" onclick="cambiarImagen(this.src)">
         </div>
     </div>
+
+    <script src="script.js"></script> <!-- Vinculación del JavaScript -->
 </body>
 </html>
