@@ -51,6 +51,6 @@ body {
 }
 
 .imagenes-pequenas img:hover {
-    border: 5px solid red; /* Cambié a rojo y aumenté el grosor */
+    border: 5px solid blue; /* Cambié a rojo y aumenté el grosor */
 }
 
