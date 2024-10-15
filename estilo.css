@@ -49,7 +49,8 @@ body {
     margin: 10px 0;
     background-color: aquamarine;
 }
-imagenes-pequenas:hover {
-    border: 3px solid #00ff00; /* Cambia el color y el tamaño del borde al pasar el mouse */
+
+.imagenes-pequenas img:hover {
+    border: 5px solid red; /* Cambié a rojo y aumenté el grosor */
 }
 
