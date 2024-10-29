@@ -49,7 +49,7 @@ body {
     height: auto;
     margin: 10px 0;
     border-radius: 8px;
-    border: 2px solid gray; /* Borde pequeño para las imágenes pequeñas */
+    border: 2px solid gray; 
     display: block;
 }
 
@@ -57,3 +57,10 @@ body {
     border: 5px solid blue;
 }
 
+.imagenes-pequenas figcaption {
+    font-size: 0.85em;
+    color: #555; /* Un gris suave */
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+}
