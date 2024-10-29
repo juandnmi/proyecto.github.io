@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROYECTO MINERIA</title>
+    <title>PROYECTO MINERÍA</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <!-- Menú desplegable en la esquina superior izquierda -->
     <div class="menu-container">
         <select id="menuDesplegable" onchange="mostrarImagen()">
-            <option value="">Menu</option>
+            <option value="">Menú</option>
             <option value="imagen1">Gráficos y diagramas estadísticos</option>
             <option value="imagen2">Personaje de cultura pop en acción</option>
             <option value="imagen3">Botón rojo circular</option>
@@ -24,9 +24,14 @@
 
     <!-- Contenedor para la imagen seleccionada -->
     <div class="container">
-        <div id="imagenSeleccionada"></div>
+        <!-- Título para indicar que se muestra la imagen seleccionada -->
+        <h2>Imagen Seleccionada</h2>
+        <div id="imagenSeleccionada">
+            <!-- Aquí se cargará la imagen seleccionada por el usuario -->
+        </div>
     </div>
 
+    <!-- Script para manejar la selección de imágenes -->
     <script src="script.js"></script>
 </body>
 </html>
