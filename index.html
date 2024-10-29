@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Menú desplegable en la esquina superior izquierda -->
+    <div class="menu-container">
         <select id="menuDesplegable" onchange="mostrarImagen()">
             <option value="">Selecciona una imagen</option>
             <option value="imagen1">Gráficos y diagramas estadísticos</option>
             <option value="imagen2">Personaje de cultura pop en acción</option>
             <option value="imagen3">Botón rojo circular</option>
         </select>
+    </div>
 
-        <!-- Contenedor para la imagen seleccionada -->
+    <!-- Botón Home en la esquina superior derecha -->
+    <div class="home-button">
+        <button onclick="irHome()">Home</button>
+    </div>
+
+    <!-- Contenedor para la imagen seleccionada -->
+    <div class="container">
         <div id="imagenSeleccionada"></div>
     </div>
 
