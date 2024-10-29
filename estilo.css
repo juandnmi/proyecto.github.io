@@ -1,66 +1,30 @@
-* { 
-    margin: 0;
+/* Estilo para el menú */
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu ul {
+    list-style: none;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: aquamarine;
+.menu li {
+    margin-bottom: 10px;
 }
 
-.container {
-    display: flex;
-    width: 80%;
-    max-width: 1200px;
+.menu a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #f0f0f0;
 }
 
-.imagen-grande {
-    flex: 3;
-    background-color: aquamarine;
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagen-grande img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-}
-
-.imagenes-pequenas {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin: 5px;
-}
-
-.imagenes-pequenas img {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 2px solid gray; 
-    display: block;
-}
-
-.imagenes-pequenas img:hover {
-    border: 5px solid blue;
-}
-
-.imagenes-pequenas figcaption {
-    font-size: 0.85em;
-    color: #555; /* Un gris suave */
-    font-style: italic;
-    text-align: center;
-    margin-top: 5px;
+.menu a:hover {
+    background-color: #ddd;
+    color: #000;
 }
