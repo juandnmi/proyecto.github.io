@@ -3,46 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROYECTO MINERIA</title>
+    <title>Implementación del Método de Regresión Logística</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <!-- Título principal de la página -->
-    <div class="title-container">
-        <h1>Implementación del Método de Regresión Logística</h1>
-    </div>
-
     <!-- Menú desplegable en la esquina superior izquierda -->
     <div class="menu-container">
         <label for="menuDesplegable" class="menu-label">Contenido</label>
         <select id="menuDesplegable" onchange="mostrarSeccion()">
-            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="">Selecciona una opción</option>
             <option value="integrantes">Integrantes</option>
             <option value="introduccion">Introducción</option>
         </select>
     </div>
 
-    <!-- Contenedor para el contenido seleccionado -->
-    <div class="content-container">
-        <!-- Sección de integrantes -->
-        <div id="integrantes" class="content-section">
-            <h2>Integrantes</h2>
-            <ul>
-                <li>Juan Camilo Barragán Ballen</li>
-                <li>Daniel Felipe Godoy Linares</li>
-                <li>María Camila Guagueta Orozco</li>
-                <li>Juan Diego Peña Guerrero</li>
-            </ul>
-        </div>
+    <!-- Botón Home en la esquina superior derecha -->
+    <div class="home-button">
+        <button onclick="irHome()">Home</button>
+    </div>
 
-        <!-- Sección de introducción -->
-        <div id="introduccion" class="content-section">
-            <h2>Introducción</h2>
-            <p>Ya habiendo explorado ciertos algoritmos de aprendizaje automático supervisados, es momento de aplicar uno de los métodos más efectivos y sencillos: la regresión logística. En la implementación de este método, utilizaremos varias librerías de Python, como pandas y scikit-learn, para construir un modelo de clasificación.</p>
-        </div>
+    <!-- Contenedor para la sección seleccionada -->
+    <div class="container">
+        <h1>Implementación del Método de Regresión Logística</h1>
+        <div id="imagenSeleccionada" class="content-display"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
