@@ -1,5 +1,5 @@
 function mostrarSeccion() {
-    const contentContainer = document.getElementById("imagenSeleccionada"); // Cambié el id del contenedor por "imagenSeleccionada" para reutilizar el HTML.
+    const contentContainer = document.getElementById("imagenSeleccionada");
     const seleccion = document.getElementById("menuDesplegable").value;
 
     // Limpia el contenido actual del contenedor
