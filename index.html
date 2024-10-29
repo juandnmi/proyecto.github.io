@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROYECTO MINERÍA</title>
+    <title>PROYECTO MINERIA</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <!-- Título principal de la página -->
+    <div class="title-container">
+        <h1>Implementación del Método de Regresión Logística</h1>
+    </div>
+
     <!-- Menú desplegable en la esquina superior izquierda -->
     <div class="menu-container">
-        <select id="menuDesplegable" onchange="mostrarImagen()">
-            <option value="">Menú</option>
-            <option value="imagen1">Gráficos y diagramas estadísticos</option>
-            <option value="imagen2">Personaje de cultura pop en acción</option>
-            <option value="imagen3">Botón rojo circular</option>
+        <label for="menuDesplegable" class="menu-label">Contenido</label>
+        <select id="menuDesplegable" onchange="mostrarSeccion()">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="integrantes">Integrantes</option>
+            <option value="introduccion">Introducción</option>
         </select>
     </div>
 
-    <!-- Botón Home en la esquina superior derecha -->
-    <div class="home-button">
-        <button onclick="irHome()">Home</button>
-    </div>
+    <!-- Contenedor para el contenido seleccionado -->
+    <div class="content-container">
+        <!-- Sección de integrantes -->
+        <div id="integrantes" class="content-section">
+            <h2>Integrantes</h2>
+            <ul>
+                <li>Juan Camilo Barragán Ballen</li>
+                <li>Daniel Felipe Godoy Linares</li>
+                <li>María Camila Guagueta Orozco</li>
+                <li>Juan Diego Peña Guerrero</li>
+            </ul>
+        </div>
 
-    <!-- Contenedor para la imagen seleccionada -->
-    <div class="container">
-        <!-- Título para indicar que se muestra la imagen seleccionada -->
-        <h2>Imagen Seleccionada</h2>
-        <div id="imagenSeleccionada">
-            <!-- Aquí se cargará la imagen seleccionada por el usuario -->
+        <!-- Sección de introducción -->
+        <div id="introduccion" class="content-section">
+            <h2>Introducción</h2>
+            <p>Ya habiendo explorado ciertos algoritmos de aprendizaje automático supervisados, es momento de aplicar uno de los métodos más efectivos y sencillos: la regresión logística. En la implementación de este método, utilizaremos varias librerías de Python, como pandas y scikit-learn, para construir un modelo de clasificación.</p>
         </div>
     </div>
 
-    <!-- Script para manejar la selección de imágenes -->
     <script src="script.js"></script>
 </body>
 </html>
+
