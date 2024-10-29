@@ -17,3 +17,7 @@ function mostrarImagen() {
         imagenSeleccionada.appendChild(img);
     }
 }
+
+function irHome() {
+    window.location.href = '/'; // Cambia '/' por la URL de tu página de inicio si es diferente
+}
