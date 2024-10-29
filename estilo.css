@@ -27,14 +27,9 @@ body {
     font-size: 1em;
 }
 
-#imagenes img {
+#imagenSeleccionada img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     margin-top: 10px;
-    display: none; /* Oculta todas las imágenes por defecto */
-}
-
-.imagen-visible {
-    display: block; /* Muestra solo la imagen seleccionada */
 }
