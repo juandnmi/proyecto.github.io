@@ -49,29 +49,52 @@
     <script src="datos_localidades.js"></script> <!-- Crea este archivo con tus datos -->
 
     <!-- Código JavaScript para configurar el mapa -->
-    <script>
-        // Inicializar el mapa centrado en la ciudad
-        var map = L.map('map').setView([4.60971, -74.08175], 12); // Ajusta las coordenadas a tu ciudad
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Calor - Casos en Sumapaz</title>
+    <!-- Incluir el CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Mapa de Calor de Casos - Localidad Sumapaz</h1>
+    <div id="map" style="width: 100%; height: 600px;"></div>
 
-        // Agregar capa de mapa base de OpenStreetMap
+    <!-- Incluir el JavaScript de Leaflet y la biblioteca Leaflet.heat para mapas de calor -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <!-- Incluir el archivo de datos -->
+    <script src="datos_sumapaz.js"></script>
+
+    <script>
+        // Inicializar el mapa centrado en Sumapaz
+        var map = L.map('map').setView([4.2, -74.5], 12);
+
+        // Agregar la capa base de OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Función para agregar los marcadores al mapa desde el archivo datos_localidades.js
-        function agregarMarcadores() {
-            localidades.forEach(function(localidad) {
-                L.marker([localidad.latitud, localidad.longitud])
-                    .addTo(map)
-                    .bindPopup("<strong>Localidad:</strong> " + localidad.nombre + "<br>" +
-                               "<strong>Casos:</strong> " + localidad.casos);
-            });
-        }
+        // Crear una capa de calor con los datos de casos
+        var heatData = sumapazCasos.map(function(dato) {
+            // Coordenadas aproximadas de Sumapaz, ajusta si tienes coordenadas específicas
+            return [4.2, -74.5, dato.casos / 10]; // Se divide para ajustar la intensidad
+        });
 
-        // Llamar a la función para cargar los marcadores
-        agregarMarcadores();
+        // Añadir la capa de calor al mapa
+        L.heatLayer(heatData, {
+            radius: 25,         // Radio del área de calor
+            blur: 15,           // Suavidad del borde de calor
+            maxZoom: 12,        // Zoom en el que la capa de calor se muestra en su máxima intensidad
+            max: 1              // Factor de intensidad máxima
+        }).addTo(map);
     </script>
+</body>
+</html>
+
     <footer>
         <ul class="footer-right" >
             <li>
