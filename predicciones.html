@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>predicciones</title>
     <link rel="stylesheet" href="./predicciones.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body class="home-body">
     <header>
@@ -37,6 +38,40 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti consectetur at quod ratione alias magni adipisci, veniam assumenda perspiciatis earum accusantium numquam fuga dolorum libero in vitae velit nulla recusandae.</p>
         </section>
     </main>
+
+        <h1>Mapa Interactivo de Localidades</h1>
+    <!-- Contenedor para el mapa -->
+    <div id="map" style="width: 100%; height: 600px;"></div>
+
+    <!-- Incluir JS de Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Incluir archivo con tus datos de localidades en formato JSON -->
+    <script src="datos_localidades.js"></script> <!-- Crea este archivo con tus datos -->
+
+    <!-- Código JavaScript para configurar el mapa -->
+    <script>
+        // Inicializar el mapa centrado en la ciudad
+        var map = L.map('map').setView([4.60971, -74.08175], 12); // Ajusta las coordenadas a tu ciudad
+
+        // Agregar capa de mapa base de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Función para agregar los marcadores al mapa desde el archivo datos_localidades.js
+        function agregarMarcadores() {
+            localidades.forEach(function(localidad) {
+                L.marker([localidad.latitud, localidad.longitud])
+                    .addTo(map)
+                    .bindPopup("<strong>Localidad:</strong> " + localidad.nombre + "<br>" +
+                               "<strong>Casos:</strong> " + localidad.casos);
+            });
+        }
+
+        // Llamar a la función para cargar los marcadores
+        agregarMarcadores();
+    </script>
     <footer>
         <ul class="footer-right" >
             <li>
