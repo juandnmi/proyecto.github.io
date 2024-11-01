@@ -5,58 +5,45 @@
 }
 html {
     font-size: 62.5%;
-
 }
 body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:#181818;
-
+    background-color: #181818;
 }
-header{
-    background-color:#202020;
-	display: flex-end;
-    justify-content: flex-end; 
+header {
+    position: relative; /* O 'static' para asegurarte de que se comporte normalmente */
+    z-index: 1; /* Asegúrate de que esté por encima de otros elementos */
 }
-nav{
+nav {
     background-color: #373737;
     padding: 10px;
 }
-nav ul{
-	display: flex;
-	padding: 10px;
-    
+nav ul {
+    display: flex;
+    padding: 10px;
 }
-
-nav ul li{
+nav ul li {
     margin-right: 3px;
     list-style: none;
     padding: 15px;
 }
-
-nav ul li:hover{
+nav ul li:hover {
     background-color:  #7f7f7f;
     border-radius: 20px;
 }
-
 nav ul li a {
-	padding:25px;
+    padding: 25px;
     color: #F0EBF5;
     font-size: 25px;
 }
-
-.home_main_grid{
- 
-    display:grid;
+.home_main_grid {
+    display: grid;
     background-color: white;
     grid-template-columns: 1fr 1fr;
-    gap:10px;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-right: 15px;
-    padding-left: 15px;
-    
+    gap: 10px;
+    padding: 30px 15px;
 }
 .download-link {
     display: inline-block;
@@ -64,10 +51,9 @@ nav ul li a {
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     margin: 10px;
 }
-
 .download-link:hover {
     background-color: #45a049;
 }
@@ -76,12 +62,11 @@ nav ul li a {
     background-color: #e6e9ed;
     border-radius: 8px;
     padding: 20px;
-    
 }
 .left_databases ul li {
     list-style: none;
 }
-.left_databases ul li h3{
+.left_databases ul li h3 {
     border-bottom: 1px solid #cdd2da;
     padding-bottom: 20px;
     text-align: center;
@@ -90,13 +75,13 @@ nav ul li a {
     font-size: 25px;
     padding: 15px 20px;
 }
-.right_objectives{
+.right_objectives {
     margin: 10px;
     background-color: #e6e9ed;
     border-radius: 8px;
     padding: 20px;
 }
-.right_objectives h3{ 
+.right_objectives h3 { 
     border-bottom: 1px solid #cdd2da;
     padding-bottom: 20px;
     text-align: center;
@@ -105,24 +90,27 @@ nav ul li a {
     font-size: 25px;
     padding: 15px 20px;
 }
-
-
 a {
     text-decoration: none;
     cursor: pointer;
 }
-
-footer{
-    margin: 15px;
-	display: flex;
-    justify-content: flex-end; 
+footer {
+    margin: 0; 
+    display: flex;
+    position: fixed; 
+    justify-content: flex-end;
+    left: 0; /* Alinear a la izquierda */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
+    background-color: #202020; /* Asegúrate de que tenga un fondo */
+    padding: 10px; /* Agrega un poco de padding */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5); 
 }
 footer ul li {
     list-style: none;
 }
-footer ul li a{
-	padding:20px;
+footer ul li a {
+    padding: 20px;
     color: #F0EBF5;
     font-size: 10px;
-    
 }
