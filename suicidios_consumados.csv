@@ -1,0 +1,253 @@
+Area;Localidad;Año;ClasificacionConducta;Casos;Población;Tasa
+1;Usaquén;2012;Suicidio consumado ;24;505657;4,7
+2;Chapinero;2012;Suicidio consumado ;11;147658;7,4
+3;Santa Fe;2012;Suicidio consumado ;9;101296;8,9
+4;San Cristóbal;2012;Suicidio consumado ;14;385095;3,6
+5;Usme;2012;Suicidio consumado ;8;345128;2,3
+6;Tunjuelito;2012;Suicidio consumado ;4;172012;2,3
+7;Bosa;2012;Suicidio consumado ;19;646887;2,9
+8;Kennedy;2012;Suicidio consumado ;26;992398;2,6
+9;Fontibón;2012;Suicidio consumado ;10;347883;2,9
+10;Engativá;2012;Suicidio consumado ;21;784983;2,7
+11;Suba;2012;Suicidio consumado ;29;1090136;2,7
+12;Barrios Unidos;2012;Suicidio consumado ;8;150063;5,3
+13;Teusaquillo;2012;Suicidio consumado ;4;141395;2,8
+14;Los Mártires;2012;Suicidio consumado ;3;76849;3,9
+15;Antonio Nariño;2012;Suicidio consumado ;4;85852;4,7
+16;Puente Aranda;2012;Suicidio consumado ;5;242138;2,1
+17;La Candelaria;2012;Suicidio consumado ;0;18030;0
+18;Rafael Uribe Uribe;2012;Suicidio consumado ;18;362714;5
+19;Ciudad Bolívar;2012;Suicidio consumado ;19;596269;3,2
+20;Sumapaz;2012;Suicidio consumado ;0;3537;0
+0;Bogotá;2012;Suicidio consumado ;244;7195980;3,4
+1;Usaquén;2013;Suicidio consumado ;18;511667;3,5
+2;Chapinero;2013;Suicidio consumado ;11;149412;7,4
+3;Santa Fe;2013;Suicidio consumado ;6;101666;5,9
+4;San Cristóbal;2013;Suicidio consumado ;12;384071;3,1
+5;Usme;2013;Suicidio consumado ;12;348516;3,4
+6;Tunjuelito;2013;Suicidio consumado ;8;171417;4,7
+7;Bosa;2013;Suicidio consumado ;18;656769;2,7
+8;Kennedy;2013;Suicidio consumado ;32;996291;3,2
+9;Fontibón;2013;Suicidio consumado ;12;351346;3,4
+10;Engativá;2013;Suicidio consumado ;18;784587;2,3
+11;Suba;2013;Suicidio consumado ;20;1102361;1,8
+12;Barrios Unidos;2013;Suicidio consumado ;5;145433;3,4
+13;Teusaquillo;2013;Suicidio consumado ;9;141772;6,3
+14;Los Mártires;2013;Suicidio consumado ;2;75727;2,6
+15;Antonio Nariño;2013;Suicidio consumado ;3;83955;3,6
+16;Puente Aranda;2013;Suicidio consumado ;6;241638;2,5
+17;La Candelaria;2013;Suicidio consumado ;0;17742;0
+18;Rafael Uribe Uribe;2013;Suicidio consumado ;6;362118;1,7
+19;Ciudad Bolívar;2013;Suicidio consumado ;27;598539;4,5
+20;Sumapaz;2013;Suicidio consumado ;1;3400;29,4
+0;Bogotá;2013;Suicidio consumado ;236;7228427;3,3
+1;Usaquén;2014;Suicidio consumado ;20;516487;3,9
+2;Chapinero;2014;Suicidio consumado ;6;150818;4
+3;Santa Fe;2014;Suicidio consumado ;11;101925;10,8
+4;San Cristóbal;2014;Suicidio consumado ;14;383077;3,7
+5;Usme;2014;Suicidio consumado ;10;351251;2,8
+6;Tunjuelito;2014;Suicidio consumado ;9;170862;5,3
+7;Bosa;2014;Suicidio consumado ;18;664774;2,7
+8;Kennedy;2014;Suicidio consumado ;30;999168;3
+9;Fontibón;2014;Suicidio consumado ;13;354097;3,7
+10;Engativá;2014;Suicidio consumado ;36;783973;4,6
+11;Suba;2014;Suicidio consumado ;27;1112165;2,4
+12;Barrios Unidos;2014;Suicidio consumado ;3;141514;2,1
+13;Teusaquillo;2014;Suicidio consumado ;4;142033;2,8
+14;Los Mártires;2014;Suicidio consumado ;3;74782;4
+15;Antonio Nariño;2014;Suicidio consumado ;3;82348;3,6
+16;Puente Aranda;2014;Suicidio consumado ;16;241132;6,6
+17;La Candelaria;2014;Suicidio consumado ;3;17494;17,1
+18;Rafael Uribe Uribe;2014;Suicidio consumado ;19;361478;5,3
+19;Ciudad Bolívar;2014;Suicidio consumado ;32;600273;5,3
+20;Sumapaz;2014;Suicidio consumado ;1;3298;30,3
+0;Bogotá;2014;Suicidio consumado ;293;7252949;4
+1;Usaquén;2015;Suicidio consumado ;26;520480;5
+2;Chapinero;2015;Suicidio consumado ;11;151996;7,2
+3;Santa Fe;2015;Suicidio consumado ;10;102155;9,8
+4;San Cristóbal;2015;Suicidio consumado ;17;382247;4,4
+5;Usme;2015;Suicidio consumado ;15;353558;4,2
+6;Tunjuelito;2015;Suicidio consumado ;5;170388;2,9
+7;Bosa;2015;Suicidio consumado ;9;671404;1,3
+8;Kennedy;2015;Suicidio consumado ;29;1001537;2,9
+9;Fontibón;2015;Suicidio consumado ;12;356388;3,4
+10;Engativá;2015;Suicidio consumado ;36;783433;4,6
+11;Suba;2015;Suicidio consumado ;41;1120332;3,7
+12;Barrios Unidos;2015;Suicidio consumado ;6;138250;4,3
+13;Teusaquillo;2015;Suicidio consumado ;7;142245;4,9
+14;Los Mártires;2015;Suicidio consumado ;4;73987;5,4
+15;Antonio Nariño;2015;Suicidio consumado ;3;81014;3,7
+16;Puente Aranda;2015;Suicidio consumado ;9;240697;3,7
+17;La Candelaria;2015;Suicidio consumado ;1;17290;5,8
+18;Rafael Uribe Uribe;2015;Suicidio consumado ;19;360924;5,3
+19;Ciudad Bolívar;2015;Suicidio consumado ;36;601716;6
+20;Sumapaz;2015;Suicidio consumado ;0;3224;0
+0;Bogotá;2015;Suicidio consumado ;310;7273265;4,3
+1;Usaquén;2016;Suicidio consumado ;34;524563;6,5
+2;Chapinero;2016;Suicidio consumado ;12;153204;7,8
+3;Santa Fe;2016;Suicidio consumado ;3;102485;2,9
+4;San Cristóbal;2016;Suicidio consumado ;21;382102;5,5
+5;Usme;2016;Suicidio consumado ;23;356045;6,5
+6;Tunjuelito;2016;Suicidio consumado ;12;170248;7
+7;Bosa;2016;Suicidio consumado ;17;677908;2,5
+8;Kennedy;2016;Suicidio consumado ;53;1004979;5,3
+9;Fontibón;2016;Suicidio consumado ;11;358804;3,1
+10;Engativá;2016;Suicidio consumado ;22;784129;2,8
+11;Suba;2016;Suicidio consumado ;43;1128753;3,8
+12;Barrios Unidos;2016;Suicidio consumado ;7;135739;5,2
+13;Teusaquillo;2016;Suicidio consumado ;10;142633;7
+14;Los Mártires;2016;Suicidio consumado ;3;73440;4,1
+15;Antonio Nariño;2016;Suicidio consumado ;8;80014;10
+16;Puente Aranda;2016;Suicidio consumado ;14;240673;5,8
+17;La Candelaria;2016;Suicidio consumado ;1;17141;5,8
+18;Rafael Uribe Uribe;2016;Suicidio consumado ;11;361010;3
+19;Ciudad Bolívar;2016;Suicidio consumado ;34;603882;5,6
+20;Sumapaz;2016;Suicidio consumado ;0;3166;0
+0;Bogotá;2016;Suicidio consumado ;356;7300918;4,9
+1;Usaquén;2017;Suicidio consumado ;26;528924;4,9
+2;Chapinero;2017;Suicidio consumado ;6;154506;3,9
+3;Santa Fe;2017;Suicidio consumado ;14;102984;13,6
+4;San Cristóbal;2017;Suicidio consumado ;20;382696;5,2
+5;Usme;2017;Suicidio consumado ;13;358813;3,6
+6;Tunjuelito;2017;Suicidio consumado ;8;170440;4,7
+7;Bosa;2017;Suicidio consumado ;31;684570;4,5
+8;Kennedy;2017;Suicidio consumado ;33;1009665;3,3
+9;Fontibón;2017;Suicidio consumado ;16;361474;4,4
+10;Engativá;2017;Suicidio consumado ;28;786139;3,6
+11;Suba;2017;Suicidio consumado ;36;1137868;3,2
+12;Barrios Unidos;2017;Suicidio consumado ;7;133890;5,2
+13;Teusaquillo;2017;Suicidio consumado ;9;143211;6,3
+14;Los Mártires;2017;Suicidio consumado ;11;73112;15
+15;Antonio Nariño;2017;Suicidio consumado ;4;79336;5
+16;Puente Aranda;2017;Suicidio consumado ;14;241114;5,8
+17;La Candelaria;2017;Suicidio consumado ;2;17049;11,7
+18;Rafael Uribe Uribe;2017;Suicidio consumado ;17;361722;4,7
+19;Ciudad Bolívar;2017;Suicidio consumado ;40;606799;6,6
+20;Sumapaz;2017;Suicidio consumado ;0;3137;0
+0;Bogotá;2017;Suicidio consumado ;347;7337449;4,7
+1;Usaquén;2018;Suicidio consumado ;28;535693;5,2
+2;Chapinero;2018;Suicidio consumado ;22;156479;14,1
+3;Santa Fe;2018;Suicidio consumado ;12;103985;11,5
+4;San Cristóbal;2018;Suicidio consumado ;23;385514;6
+5;Usme;2018;Suicidio consumado ;17;363394;4,7
+6;Tunjuelito;2018;Suicidio consumado ;10;171632;5,8
+7;Bosa;2018;Suicidio consumado ;32;694397;4,6
+8;Kennedy;2018;Suicidio consumado ;50;1019748;4,9
+9;Fontibón;2018;Suicidio consumado ;17;365884;4,6
+10;Engativá;2018;Suicidio consumado ;33;792518;4,2
+11;Suba;2018;Suicidio consumado ;41;1152387;3,6
+12;Barrios Unidos;2018;Suicidio consumado ;4;133126;3
+13;Teusaquillo;2018;Suicidio consumado ;11;144526;7,6
+14;Los Mártires;2018;Suicidio consumado ;6;73277;8,2
+15;Antonio Nariño;2018;Suicidio consumado ;3;79229;3,8
+16;Puente Aranda;2018;Suicidio consumado ;10;242905;4,1
+17;La Candelaria;2018;Suicidio consumado ;2;17075;11,7
+18;Rafael Uribe Uribe;2018;Suicidio consumado ;18;364532;4,9
+19;Ciudad Bolívar;2018;Suicidio consumado ;37;613127;6
+20;Sumapaz;2018;Suicidio consumado ;0;3138;0
+0;Bogotá;2018;Suicidio consumado ;387;7412566;5,2
+1;Usaquén;2019;Suicidio consumado ;43;550706;7,8
+2;Chapinero;2019;Suicidio consumado ;25;163148;15,3
+3;Santa Fe;2019;Suicidio consumado ;10;105926;9,4
+4;San Cristóbal;2019;Suicidio consumado ;22;392322;5,6
+5;Usme;2019;Suicidio consumado ;14;374887;3,7
+6;Tunjuelito;2019;Suicidio consumado ;13;175481;7,4
+7;Bosa;2019;Suicidio consumado ;31;707173;4,4
+8;Kennedy;2019;Suicidio consumado ;45;1027373;4,4
+9;Fontibón;2019;Suicidio consumado ;16;377118;4,2
+10;Engativá;2019;Suicidio consumado ;40;802780;5
+11;Suba;2019;Suicidio consumado ;47;1192644;3,9
+12;Barrios Unidos;2019;Suicidio consumado ;11;138316;8
+13;Teusaquillo;2019;Suicidio consumado ;11;152414;7,2
+14;Los Mártires;2019;Suicidio consumado ;10;82957;12,1
+15;Antonio Nariño;2019;Suicidio consumado ;4;80095;5
+16;Puente Aranda;2019;Suicidio consumado ;12;247237;4,9
+17;La Candelaria;2019;Suicidio consumado ;1;17345;5,8
+18;Rafael Uribe Uribe;2019;Suicidio consumado ;20;372981;5,4
+19;Ciudad Bolívar;2019;Suicidio consumado ;31;628670;4,9
+20;Sumapaz;2019;Suicidio consumado ;0;3298;0
+0;Bogotá;2019;Suicidio consumado ;414;7592871;5,5
+1;Usaquén;2020;Suicidio consumado ;38;564539;6,7
+2;Chapinero;2020;Suicidio consumado ;10;169786;5,9
+3;Santa Fe;2020;Suicidio consumado ;6;107458;5,6
+4;San Cristóbal;2020;Suicidio consumado ;18;397410;4,5
+5;Usme;2020;Suicidio consumado ;16;384943;4,2
+6;Tunjuelito;2020;Suicidio consumado ;11;178667;6,2
+7;Bosa;2020;Suicidio consumado ;31;717694;4,3
+8;Kennedy;2020;Suicidio consumado ;32;1034379;3,1
+9;Fontibón;2020;Suicidio consumado ;10;386864;2,6
+10;Engativá;2020;Suicidio consumado ;29;811472;3,6
+11;Suba;2020;Suicidio consumado ;35;1227787;2,9
+12;Barrios Unidos;2020;Suicidio consumado ;8;143265;5,6
+13;Teusaquillo;2020;Suicidio consumado ;9;161222;5,6
+14;Los Mártires;2020;Suicidio consumado ;6;83590;7,2
+15;Antonio Nariño;2020;Suicidio consumado ;1;81472;1,2
+16;Puente Aranda;2020;Suicidio consumado ;4;250968;1,6
+17;La Candelaria;2020;Suicidio consumado ;1;17611;5,7
+18;Rafael Uribe Uribe;2020;Suicidio consumado ;15;380073;3,9
+19;Ciudad Bolívar;2020;Suicidio consumado ;33;641306;5,1
+20;Sumapaz;2020;Suicidio consumado ;0;3449;0
+0;Bogotá;2020;Suicidio consumado ;319;7732161;4,1
+1;Usaquén;2021;Suicidio consumado ;32;571268;5,6
+2;Chapinero;2021;Suicidio consumado ;11;173353;6,3
+3;Santa Fe;2021;Suicidio consumado ;9;107784;8,4
+4;San Cristóbal;2021;Suicidio consumado ;26;401060;6,5
+5;Usme;2021;Suicidio consumado ;20;393366;5,1
+6;Tunjuelito;2021;Suicidio consumado ;12;180158;6,7
+7;Bosa;2021;Suicidio consumado ;40;722893;5,5
+8;Kennedy;2021;Suicidio consumado ;43;1034838;4,2
+9;Fontibón;2021;Suicidio consumado ;11;393532;2,8
+10;Engativá;2021;Suicidio consumado ;41;814100;5
+11;Suba;2021;Suicidio consumado ;35;1252811;2,8
+12;Barrios Unidos;2021;Suicidio consumado ;8;146876;5,4
+13;Teusaquillo;2021;Suicidio consumado ;6;167879;3,6
+14;Los Mártires;2021;Suicidio consumado ;7;83426;8,4
+15;Antonio Nariño;2021;Suicidio consumado ;7;82201;8,5
+16;Puente Aranda;2021;Suicidio consumado ;12;253367;4,7
+17;La Candelaria;2021;Suicidio consumado ;3;17877;16,8
+18;Rafael Uribe Uribe;2021;Suicidio consumado ;15;383960;3,9
+19;Ciudad Bolívar;2021;Suicidio consumado ;30;649834;4,6
+20;Sumapaz;2021;Suicidio consumado ;1;3584;27,9
+0;Bogotá;2021;Suicidio consumado ;374;7823334;4,8
+1;Usaquén;2022;Suicidio consumado ;31;579447;5,3
+2;Chapinero;2022;Suicidio consumado ;18;176471;10,2
+3;Santa Fe;2022;Suicidio consumado ;14;107630;13
+4;San Cristóbal;2022;Suicidio consumado ;33;403674;8,2
+5;Usme;2022;Suicidio consumado ;18;400580;4,5
+6;Tunjuelito;2022;Suicidio consumado ;9;181476;5
+7;Bosa;2022;Suicidio consumado ;27;726293;3,7
+8;Kennedy;2022;Suicidio consumado ;53;1034293;5,1
+9;Fontibón;2022;Suicidio consumado ;27;399020;6,8
+10;Engativá;2022;Suicidio consumado ;39;815262;4,8
+11;Suba;2022;Suicidio consumado ;44;1273909;3,5
+12;Barrios Unidos;2022;Suicidio consumado ;8;150151;5,3
+13;Teusaquillo;2022;Suicidio consumado ;12;167657;7,2
+14;Los Mártires;2022;Suicidio consumado ;4;83142;4,8
+15;Antonio Nariño;2022;Suicidio consumado ;3;82958;3,6
+16;Puente Aranda;2022;Suicidio consumado ;13;255123;5,1
+17;La Candelaria;2022;Suicidio consumado ;1;18143;5,5
+18;Rafael Uribe Uribe;2022;Suicidio consumado ;17;386696;4,4
+19;Ciudad Bolívar;2022;Suicidio consumado ;46;656015;7
+20;Sumapaz;2022;Suicidio consumado ;1;3713;26,9
+0;Bogotá;2022;Suicidio consumado ;427;7873316;5,4
+1;Usaquén;2023;Suicidio consumado ;29;586.954;4,9
+2;Chapinero;2023;Suicidio consumado ;15;179.406;8,4
+3;Santa Fe;2023;Suicidio consumado ;11;107.677;10,2
+4;San Cristóbal;2023;Suicidio consumado ;28;406.498;6,9
+5;Usme;2023;Suicidio consumado ;28;407.645;6,9
+6;Tunjuelito;2023;Suicidio consumado ;13;182.943;7,1
+7;Bosa;2023;Suicidio consumado ;31;729.781;4,2
+8;Kennedy;2023;Suicidio consumado ;54;1.035.224;5,2
+9;Fontibón;2023;Suicidio consumado ;12;404.252;3
+10;Engativá;2023;Suicidio consumado ;31;817.019;3,8
+11;Suba;2023;Suicidio consumado ;47;1.294.358;3,6
+12;Barrios Unidos;2023;Suicidio consumado ;5;153.342;3,3
+13;Teusaquillo;2023;Suicidio consumado ;9;166.428;5,4
+14;Los Mártires;2023;Suicidio consumado ;7;82.848;8,4
+15;Antonio Nariño;2023;Suicidio consumado ;6;83.925;7,1
+16;Puente Aranda;2023;Suicidio consumado ;10;256.731;3,9
+17;La Candelaria;2023;Suicidio consumado ;4;18.409;21,7
+18;Rafael Uribe Uribe;2023;Suicidio consumado ;24;389.238;6,2
+19;Ciudad Bolívar;2023;Suicidio consumado ;45;661.592;6,8
+20;Sumapaz;2023;Suicidio consumado ;0;3.825;0
+0;Bogotá;2023;Suicidio consumado ;419;7907281;5,3
