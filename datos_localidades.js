@@ -1,37 +1,24 @@
-// Array de objetos de localidades con datos de cada una
-var localidades = [
-    {
-        "nombre": "Localidad 1",
-        "latitud": 4.60971,  // Coordenadas de ejemplo
-        "longitud": -74.08175,
-        "casos": 150
-    },
-    {
-        "nombre": "Localidad 2",
-        "latitud": 4.63000,
-        "longitud": -74.10000,
-        "casos": 200
-    },
-    // Datos de casos en Sumapaz
-var sumapazCasos = [
-    { año: 2012, casos: 7 },
-    { año: 2013, casos: 24 },
-    { año: 2014, casos: 29 },
-    { año: 2015, casos: 17 },
-    { año: 2016, casos: 22 },
-    { año: 2017, casos: 13 },
-    { año: 2018, casos: 25 },
-    { año: 2019, casos: 29 },
-    { año: 2020, casos: 15 },
-    { año: 2021, casos: 14 },
-    { año: 2022, casos: 8 },
-    { año: 2023, casos: 18 },
-    { año: 2024, casos: 17 },
-    { año: 2025, casos: 17 },
-    { año: 2026, casos: 16 },
-    { año: 2027, casos: 16 },
-    { año: 2028, casos: 15 }
-];
-
-    // Agrega más localidades según tus datos
+// Datos de casos en 21 localidades para el año 2012
+var localidadesCasos2012 = [
+    { localidad: "Usaquén", casos: 15 },
+    { localidad: "Chapinero", casos: 12 },
+    { localidad: "Santa Fe", casos: 18 },
+    { localidad: "San Cristóbal", casos: 22 },
+    { localidad: "Usme", casos: 25 },
+    { localidad: "Tunjuelito", casos: 10 },
+    { localidad: "Bosa", casos: 27 },
+    { localidad: "Kennedy", casos: 30 },
+    { localidad: "Fontibón", casos: 17 },
+    { localidad: "Engativá", casos: 21 },
+    { localidad: "Suba", casos: 35 },
+    { localidad: "Barrios Unidos", casos: 13 },
+    { localidad: "Teusaquillo", casos: 8 },
+    { localidad: "Los Mártires", casos: 20 },
+    { localidad: "Antonio Nariño", casos: 7 },
+    { localidad: "Puente Aranda", casos: 18 },
+    { localidad: "La Candelaria", casos: 5 },
+    { localidad: "Rafael Uribe Uribe", casos: 23 },
+    { localidad: "Ciudad Bolívar", casos: 28 },
+    { localidad: "Sumapaz", casos: 7 },
+    { localidad: "Bogotá Rural", casos: 6 } // Ejemplo adicional
 ];
