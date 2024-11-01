@@ -28,6 +28,7 @@ nav ul{
 	padding: 10px;
     
 }
+
 nav ul li{
     margin-right: 3px;
     list-style: none;
@@ -44,6 +45,7 @@ nav ul li a {
     color: #F0EBF5;
     font-size: 25px;
 }
+
 .home_main_grid{
  
     display:grid;
@@ -55,6 +57,18 @@ nav ul li a {
     padding-right: 15px;
     padding-left: 15px;
     
+}
+.download-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-link:hover {
+    background-color: #45a049;
 }
 .left_databases {
     margin: 10px;
@@ -96,15 +110,16 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
 footer{
-    margin: 10px;
+    margin: 15px;
 	display: flex;
     justify-content: flex-end; 
 }
 footer ul li {
     list-style: none;
 }
-footer ul li a {
+footer ul li a{
 	padding:20px;
     color: #F0EBF5;
     font-size: 10px;
