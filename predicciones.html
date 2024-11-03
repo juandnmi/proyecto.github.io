@@ -3,69 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Calor de Suicidios en Bogotá</title>
+    <title>Mapa Interactivo de Calor de Bogotá</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Casos</a></li>
-                <li><a href="#">Predicciones</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="predicciones_grid">
-        <div class="left_map">
-            <h1 class="map-title">Mapa de suicidios</h1>
-            <select id="añoSelector">
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                </select>
-            <div id="map" style="height: 600px;"></div>
+    <h1>Mapa de Calor de Intentos de Suicidio en Bogotá</h1>
+    <div class="container">
+        <div class="map-container">
+            <select id="yearSelect" class="year-select">
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+            <div id="map"></div>
         </div>
-        <div class="right_databases">
-            <h1>Datos de Localidades</h1>
-            <p>Aquí se mostrarán los datos de suicidios según el año seleccionado.</p>
+        <div class="right-panel">
+            <!-- Aquí puedes añadir más información o controles adicionales -->
         </div>
     </div>
-
-    <footer>
-        <ul class="footer-right" >
-            <li>
-                <a href="">Maria Camila Guaqueta</a>
-            </li>
-            <li>
-                <a href="">Juan Diego Peña</a>
-
-
-            <li>
-                <a href="">Daniel Felipe Godoy</a>
-            </li>
-            <li>
-                <a href="">Juan Camilo Barragan</a>
-            </li>
-        </ul>
-    </footer> 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
