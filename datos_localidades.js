@@ -1,304 +1,218 @@
-var map = L.map('map').setView([4.6115, -74.0817], 12); // Coordenadas de Bogotá
+// Coordenadas de las localidades
+const coordenadas = {
+    Usaquen: { lat: 4.6884, lng: -74.0340 },
+    Chapinero: { lat: 4.6112, lng: -74.0502 },
+    SantaFe: { lat: 4.5981, lng: -74.0741 },
+    SanCristobal: { lat: 4.5804, lng: -74.0990 },
+    Usme: { lat: 4.5535, lng: -74.1532 },
+    Tunjuelito: { lat: 4.6105, lng: -74.1361 },
+    Bosa: { lat: 4.6092, lng: -74.1836 },
+    Kennedy: { lat: 4.6085, lng: -74.1267 },
+    Fontibon: { lat: 4.6574, lng: -74.1211 },
+    Engativa: { lat: 4.6769, lng: -74.1213 },
+    Suba: { lat: 4.6996, lng: -74.0906 },
+    BarriosUnidos: { lat: 4.6524, lng: -74.0722 },
+    Teusaquillo: { lat: 4.6549, lng: -74.0862 },
+    LosMartires: { lat: 4.6100, lng: -74.0901 },
+    AntonioNarino: { lat: 4.6052, lng: -74.1156 },
+    PuenteAranda: { lat: 4.6355, lng: -74.1164 },
+    LaCandelaria: { lat: 4.5981, lng: -74.0800 },
+    RafaelUribeUribe: { lat: 4.5899, lng: -74.1075 },
+    CiudadBolivar: { lat: 4.5880, lng: -74.1590 },
+    Sumapaz: { lat: 4.5582, lng: -74.4067 }
+};
 
-// Agregar capa de mapa
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19
-}).addTo(map);
+const heatData = {}; // Objeto para almacenar los datos
 
-var localidades = {
-    "2012": [
-        { localidad: "Antonio Nariño", casos: 40, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 84, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 415, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 90, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 460, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 325, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 274, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 288, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 5, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 62, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 77, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 264, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 186, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 66, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 380, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 7, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 51, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 103, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 210, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 217, coords: [4.4844, -74.1232] }
+// Funcion para agregar datos al mapa de calor
+function agregarDatosHeatMap(anio, datos) {
+    const localidades = datos.map(item => {
+        const [nombre, casos] = item;
+        const coordenada = coordenadas[nombre.replace(/\s+/g, '')]; // Ajuste de nombre
+
+        if (coordenada) {
+            return {
+                lat: coordenada.lat,
+                lng: coordenada.lng,
+                cases: casos
+            };
+        }
+        return null;
+    }).filter(Boolean);
+
+    heatData[anio] = localidades;
+}
+
+// Datos de los años y localidades
+data = {
+    2012: [['Usaquén', 143], ['Chapinero', 82], ['Santa Fe', 33], ['San Cristóbal', 102],
+           ['Usme', 123], ['Tunjuelito', 49], ['Bosa', 219], ['Kennedy', 180], 
+           ['Fontibón', 105], ['Engativá', 151], ['Suba', 172], ['Barrios Unidos', 76], 
+           ['Teusaquillo', 49], ['Los Mártires', 31], ['Antonio Nariño', 24], 
+           ['Puente Aranda', 52], ['La Candelaria', 4], ['Rafael Uribe Uribe', 116], 
+           ['Ciudad Bolívar', 214], ['Sumapaz', 5]],
+    2013: [['Usaquén', 132], ['Chapinero', 27], ['Santa Fe', 48], ['San Cristóbal', 131], 
+           ['Usme', 172], ['Tunjuelito', 67], ['Bosa', 252], ['Kennedy', 268], 
+           ['Fontibón', 87], ['Engativá', 153], ['Suba', 242], ['Barrios Unidos', 34], 
+           ['Teusaquillo', 40], ['Los Mártires', 42], ['Antonio Nariño', 18], 
+           ['Puente Aranda', 74], ['La Candelaria', 9], ['Rafael Uribe Uribe', 115], 
+           ['Ciudad Bolívar', 273], ['Sumapaz', 4]],
+    2014: [['Usaquén', 175], ['Chapinero', 74], ['Santa Fe', 59], ['San Cristóbal', 192], 
+           ['Usme', 286], ['Tunjuelito', 140], ['Bosa', 335], ['Kennedy', 352], 
+           ['Fontibón', 179], ['Engativá', 195], ['Suba', 305], ['Barrios Unidos', 96], 
+           ['Teusaquillo', 79], ['Los Mártires', 54], ['Antonio Nariño', 44], 
+           ['Puente Aranda', 67], ['La Candelaria', 23], ['Rafael Uribe Uribe', 201], 
+           ['Ciudad Bolívar', 385], ['Sumapaz', 5]],
+    2015: [['Usaquén', 207], ['Chapinero', 75], ['Santa Fe', 76], ['San Cristóbal', 211], 
+           ['Usme', 229], ['Tunjuelito', 166], ['Bosa', 448], ['Kennedy', 441], 
+           ['Fontibón', 191], ['Engativá', 112], ['Suba', 389], ['Barrios Unidos', 96], 
+           ['Teusaquillo', 63], ['Los Mártires', 73], ['Antonio Nariño', 57], 
+           ['Puente Aranda', 81], ['La Candelaria', 14], ['Rafael Uribe Uribe', 287], 
+           ['Ciudad Bolívar', 524], ['Sumapaz', 2]],
+    2016: [['Usaquén', 170], ['Chapinero', 48], ['Santa Fe', 43], ['San Cristóbal', 156], 
+           ['Usme', 244], ['Tunjuelito', 84], ['Bosa', 354], ['Kennedy', 253], 
+           ['Fontibón', 126], ['Engativá', 224], ['Suba', 383], ['Barrios Unidos', 72], 
+           ['Teusaquillo', 44], ['Los Mártires', 52], ['Antonio Nariño', 33], 
+           ['Puente Aranda', 74], ['La Candelaria', 10], ['Rafael Uribe Uribe', 206], 
+           ['Ciudad Bolívar', 443], ['Sumapaz', 3]],
+    2017: [['Usaquén', 223], ['Chapinero', 68], ['Santa Fe', 73], ['San Cristóbal', 201], 
+           ['Usme', 294], ['Tunjuelito', 161], ['Bosa', 439], ['Kennedy', 515], 
+           ['Fontibón', 232], ['Engativá', 383], ['Suba', 530], ['Barrios Unidos', 98], 
+           ['Teusaquillo', 97], ['Los Mártires', 71], ['Antonio Nariño', 60], 
+           ['Puente Aranda', 165], ['La Candelaria', 15], ['Rafael Uribe Uribe', 178], 
+           ['Ciudad Bolívar', 534], ['Sumapaz', 3]],
+    2018: [['Usaquén', 226], ['Chapinero', 64], ['Santa Fe', 81], ['San Cristóbal', 241], 
+           ['Usme', 224], ['Tunjuelito', 117], ['Bosa', 354], ['Kennedy', 502], 
+           ['Fontibón', 175], ['Engativá', 319], ['Suba', 383], ['Barrios Unidos', 64], 
+           ['Teusaquillo', 77], ['Los Mártires', 57], ['Antonio Nariño', 69], 
+           ['Puente Aranda', 119], ['La Candelaria', 22], ['Rafael Uribe Uribe', 222], 
+           ['Ciudad Bolívar', 383], ['Sumapaz', 2]],
+    2019: [['Usaquén', 150], ['Chapinero', 62], ['Santa Fe', 97], ['San Cristóbal', 385], 
+           ['Usme', 327], ['Tunjuelito', 144], ['Bosa', 319], ['Kennedy', 517], 
+           ['Fontibón', 169], ['Engativá', 219], ['Suba', 311], ['Barrios Unidos', 43], 
+           ['Teusaquillo', 52], ['Los Mártires', 65], ['Antonio Nariño', 57], 
+           ['Puente Aranda', 137], ['La Candelaria', 18], ['Rafael Uribe Uribe', 242], 
+           ['Ciudad Bolívar', 455], ['Sumapaz', 3]],
+    2020: [['Usaquén', 177], ['Chapinero', 55], ['Santa Fe', 79], ['San Cristóbal', 279], 
+           ['Usme', 296], ['Tunjuelito', 144], ['Bosa', 396], ['Kennedy', 551], 
+           ['Fontibón', 220], ['Engativá', 332], ['Suba', 484], ['Barrios Unidos', 52], 
+           ['Teusaquillo', 67], ['Los Mártires', 56], ['Antonio Nariño', 58], 
+           ['Puente Aranda', 152], ['La Candelaria', 25], ['Rafael Uribe Uribe', 226], 
+           ['Ciudad Bolívar', 360], ['Sumapaz', 2]],
+    2021: [['Usaquén', 460], ['Chapinero', 128], ['Santa Fe', 115], ['San Cristóbal', 318], 
+           ['Usme', 312], ['Tunjuelito', 174], ['Bosa', 524], ['Kennedy', 675], 
+           ['Fontibón', 235], ['Engativá', 608], ['Suba', 979], ['Barrios Unidos', 105], 
+           ['Teusaquillo', 158], ['Los Mártires', 77], ['Antonio Nariño', 64], 
+           ['Puente Aranda', 206], ['La Candelaria', 26], ['Rafael Uribe Uribe', 299], 
+           ['Ciudad Bolívar', 608], ['Sumapaz', 3]],
+    2022: [['Usaquén', 591], ['Chapinero', 178], ['Santa Fe', 168], ['San Cristóbal', 472], 
+           ['Usme', 435], ['Tunjuelito', 206], ['Bosa', 784], ['Kennedy', 1010], 
+           ['Fontibón', 323], ['Engativá', 843], ['Suba', 1304], ['Barrios Unidos', 183], 
+           ['Teusaquillo', 210], ['Los Mártires', 106], ['Antonio Nariño', 98], 
+           ['Puente Aranda', 226], ['La Candelaria', 35], ['Rafael Uribe Uribe', 417], 
+           ['Ciudad Bolívar', 743]],
+    2023: [['Usaquén', 479], ['Chapinero', 180], ['Santa Fe', 163], ['San Cristóbal', 466], 
+           ['Usme', 488], ['Tunjuelito', 164], ['Bosa', 560], ['Kennedy', 942], 
+           ['Fontibón', 294], ['Engativá', 640], ['Suba', 919], ['Barrios Unidos', 168], 
+           ['Teusaquillo', 148], ['Los Mártires', 83], ['Antonio Nariño', 74], 
+           ['Puente Aranda', 211], ['La Candelaria', 29], ['Rafael Uribe Uribe', 405], 
+           ['Ciudad Bolívar', 731], ['Sumapaz', 1]],
+  2024: [
+        ['Usaquen', 374], ['Chapinero', 137], ['Santa Fe', 145], ['San Cristobal', 461],
+        ['Usme', 437], ['Tunjuelito', 195], ['Bosa', 602], ['Kennedy', 919],
+        ['Fontibon', 274], ['Engativa', 742], ['Suba', 989], ['Barrios Unidos', 131],
+        ['Teusaquillo', 175], ['Los Martires', 110], ['Antonio Narino', 87],
+        ['Puente Aranda', 222], ['La Candelaria', 29], ['Rafael Uribe Uribe', 374],
+        ['Ciudad Bolivar', 637], ['Sumapaz', 0]
     ],
-    "2013": [
-        { localidad: "Antonio Nariño", casos: 54, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 82, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 655, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 87, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 665, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 348, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 279, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 508, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 16, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 79, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 136, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 334, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 271, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 90, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 434, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 24, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 82, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 187, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 212, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 440, coords: [4.4844, -74.1232] }
+    2025: [
+        ['Usaquen', 397], ['Chapinero', 146], ['Santa Fe', 154], ['San Cristobal', 492],
+        ['Usme', 459], ['Tunjuelito', 203], ['Bosa', 632], ['Kennedy', 982],
+        ['Fontibon', 288], ['Engativa', 804], ['Suba', 1064], ['Barrios Unidos', 138],
+        ['Teusaquillo', 189], ['Los Martires', 116], ['Antonio Narino', 92],
+        ['Puente Aranda', 237], ['La Candelaria', 31], ['Rafael Uribe Uribe', 395],
+        ['Ciudad Bolivar', 664], ['Sumapaz', 0]
     ],
-    "2014": [
-        { localidad: "Antonio Nariño", casos: 113, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 161, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 896, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 116, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 815, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 562, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 452, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 627, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 42, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 123, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 122, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 484, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 545, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 137, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 617, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 29, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 117, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 313, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 286, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 703, coords: [4.4844, -74.1232] }
+    2026: [
+        ['Usaquen', 421], ['Chapinero', 156], ['Santa Fe', 164], ['San Cristobal', 523],
+        ['Usme', 482], ['Tunjuelito', 212], ['Bosa', 662], ['Kennedy', 1045],
+        ['Fontibon', 301], ['Engativa', 867], ['Suba', 1140], ['Barrios Unidos', 145],
+        ['Teusaquillo', 202], ['Los Martires', 122], ['Antonio Narino', 97],
+        ['Puente Aranda', 252], ['La Candelaria', 33], ['Rafael Uribe Uribe', 415],
+        ['Ciudad Bolivar', 691], ['Sumapaz', 0]
     ],
-    "2015": [
-        { localidad: "Antonio Nariño", casos: 137, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 156, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 946, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 126, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1224, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 585, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 474, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 868, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 32, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 141, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 190, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 703, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 564, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 137, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 825, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 17, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 98, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 353, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 334, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 620, coords: [4.4844, -74.1232] }
+    2027: [
+        ['Usaquen', 444], ['Chapinero', 165], ['Santa Fe', 174], ['San Cristobal', 554],
+        ['Usme', 505], ['Tunjuelito', 221], ['Bosa', 691], ['Kennedy', 1109],
+        ['Fontibon', 315], ['Engativa', 930], ['Suba', 1216], ['Barrios Unidos', 153],
+        ['Teusaquillo', 216], ['Los Martires', 128], ['Antonio Narino', 102],
+        ['Puente Aranda', 267], ['La Candelaria', 34], ['Rafael Uribe Uribe', 436],
+        ['Ciudad Bolivar', 718], ['Sumapaz', 0]
     ],
-    "2016": [
-        { localidad: "Antonio Nariño", casos: 91, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 132, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 792, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 96, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1273, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 601, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 549, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 750, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 18, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 115, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 179, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 561, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 433, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 87, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 955, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 22, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 97, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 255, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 308, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 715, coords: [4.4844, -74.1232] }
-    ],
-    "2017": [
-        { localidad: "Antonio Nariño", casos: 112, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 212, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 1266, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 129, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1267, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 769, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 580, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 1255, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 29, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 136, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 343, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 538, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 443, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 153, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 832, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 13, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 160, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 365, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 386, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 769, coords: [4.4844, -74.1232] }
-    ],
-    "2018": [
-        { localidad: "Antonio Nariño", casos: 177, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 246, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 1447, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 165, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1383, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 965, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 613, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 1692, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 37, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 135, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 428, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 731, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 662, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 200, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 1016, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 25, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 219, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 459, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 539, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 991, coords: [4.4844, -74.1232] }
-    ],
-    "2019": [
-        { localidad: "Antonio Nariño", casos: 182, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 166, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 1859, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 193, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1688, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 1000, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 736, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 2019, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 61, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 204, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 537, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 814, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 953, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 295, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 1166, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 29, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 226, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 565, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 470, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 1128, coords: [4.4844, -74.1232] }
-    ],
-    "2020": [
-        { localidad: "Antonio Nariño", casos: 174, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 198, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 1657, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 194, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1296, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 1192, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 820, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 2151, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 63, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 201, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 547, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 694, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 768, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 250, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 1706, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 15, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 297, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 482, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 643, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 902, coords: [4.4844, -74.1232] }
-    ],
-    "2021": [
-        { localidad: "Antonio Nariño", casos: 257, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 355, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 2209, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 349, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 1921, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 2075, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 1111, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 2953, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 69, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 273, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 718, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 1028, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 1092, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 340, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 3047, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 14, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 557, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 612, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 1276, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 1102, coords: [4.4844, -74.1232] }
-    ],
-    "2022": [
-        { localidad: "Antonio Nariño", casos: 406, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 646, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 3431, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 619, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 2891, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 3263, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 1600, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 4492, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 151, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos:452, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 1112, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 1640, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 1851, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 716, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 4480, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 8, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 752, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 794, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 1916, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 1727, coords: [4.4844, -74.1232] }
-    ],
-    "2023": [
-        { localidad: "Antonio Nariño", casos: 397, coords: [4.6102, -74.1037] },
-        { localidad: "Barrios Unidos", casos: 720, coords: [4.6802, -74.0721] },
-        { localidad: "Bosa", casos: 3682, coords: [4.6348, -74.1855] },
-        { localidad: "Chapinero", casos: 622, coords: [4.6545, -74.0599] },
-        { localidad: "Ciudad Bolívar", casos: 3470, coords: [4.4845, -74.1384] },
-        { localidad: "Engativá", casos: 3633, coords: [4.6948, -74.1123] },
-        { localidad: "Fontibón", casos: 1615, coords: [4.6789, -74.1463] },
-        { localidad: "Kennedy", casos: 5049, coords: [4.6261, -74.1389] },
-        { localidad: "La Candelaria", casos: 157, coords: [4.6040, -74.0712] },
-        { localidad: "Los Mártires", casos: 504, coords: [4.6166, -74.0895] },
-        { localidad: "Puente Aranda", casos: 1178, coords: [4.6167, -74.1211] },
-        { localidad: "Rafael Uribe Uribe", casos: 1778, coords: [4.5610, -74.0987] },
-        { localidad: "San Cristóbal", casos: 1922, coords: [4.5794, -74.0942] },
-        { localidad: "Santa Fe", casos: 653, coords: [4.6097, -74.0817] },
-        { localidad: "Suba", casos: 4905, coords: [4.7482, -74.1004] },
-        { localidad: "Sumapaz", casos: 18, coords: [4.2104, -74.3426] },
-        { localidad: "Teusaquillo", casos: 926, coords: [4.6439, -74.0788] },
-        { localidad: "Tunjuelito", casos: 956, coords: [4.5604, -74.1384] },
-        { localidad: "Usaquén", casos: 1854, coords: [4.7485, -74.0304] },
-        { localidad: "Usme", casos: 2200, coords: [4.4844, -74.1232] }
+    2028: [
+        ['Usaquen', 467], ['Chapinero', 175], ['Santa Fe', 183], ['San Cristobal', 585],
+        ['Usme', 528], ['Tunjuelito', 229], ['Bosa', 721], ['Kennedy', 1172],
+        ['Fontibon', 328], ['Engativa', 992], ['Suba', 1291], ['Barrios Unidos', 160],
+        ['Teusaquillo', 229], ['Los Martires', 135], ['Antonio Narino', 107],
+        ['Puente Aranda', 282], ['La Candelaria', 36], ['Rafael Uribe Uribe', 457],
+        ['Ciudad Bolivar', 745], ['Sumapaz', 0]
     ]
 };
 
 
-// Función para actualizar el mapa de calor
-function actualizarMapa(a) {
-    // Limpiar el mapa de calor existente
-    if (typeof heat !== 'undefined') {
-        map.removeLayer(heat);
-    }
-    
-    // Crear un nuevo array para las coordenadas
-    var heatData = [];
-
-    // Recoger datos del año seleccionado
-    var datoslocal = localidades[a];
-    for (var i = 0; i < datoslocal.length; i++) {
-        var dato = datoslocal[i];
-        heatData.push([dato.coords[0], dato.coords[1], dato.casos]); // [lat, lon, weight]
-    }
-
-    // Crear la capa de calor
-    var heat = L.heatLayer(heatData, { radius: 25, blur: 15 }).addTo(map);
+// Crear una lista de años
+const anios = [];
+for (const a in data) {
+    anios.push(a);
 }
 
-// Evento para manejar el cambio en el selector de año
-document.getElementById('añoSelector').addEventListener('change', function() {
-    var epocaSelec = this.value;
-    actualizarMapa(epocaSelec); // Actualizar el mapa según el año seleccionado
+// Agregar los datos al objeto heatData
+let cuenta = 0;
+for (const dato in data) {
+    agregarDatosHeatMap(anios[cuenta], data[anios[cuenta]]);
+    cuenta++;
+}
+
+// Inicializacion del mapa
+const map = L.map('map', {
+    center: [4.60971, -74.08175],
+    zoom: 12,
+    minZoom: 10,
+    maxZoom: 14,
+    zoomControl: true
 });
 
-// Inicializar el mapa con el primer año
-actualizarMapa('2012');
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+const bounds = L.latLngBounds(L.latLng(4.389, -74.25), L.latLng(4.847, -73.911));
+map.setMaxBounds(bounds);
+
+// Funcion para actualizar el mapa de calor
+let heatLayer = null;
+function updateHeatMap(year) {
+    if (heatLayer) {
+        map.removeLayer(heatLayer);
+    }
+
+    const yearData = heatData[year];
+    if (yearData) {
+        const heatLayerData = yearData.map(d => [d.lat, d.lng, d.cases / 20]);
+        heatLayer = L.heatLayer(heatLayerData, {
+            radius: 25,
+            blur: 20,
+            maxZoom: 12
+        }).addTo(map);
+    }
+}
+
+// Inicializa el mapa con datos de 2012
+updateHeatMap(2012);
+
+// Evento para el cambio de año en el selector
+document.getElementById('yearSelect').addEventListener('change', function() {
+    const selectedYear = this.value;
+    updateHeatMap(selectedYear);
+});
