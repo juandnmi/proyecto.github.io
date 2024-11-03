@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>predicciones</title>
+    <title>Predicciones</title>
     <link rel="stylesheet" href="./predicciones.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -12,126 +12,56 @@
     <header>
         <nav>
             <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="./casos_actuales.html">Casos</a>
-                </li>
-                <li>
-                    <a href="./predicciones.html">Predicciones </a>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./casos_actuales.html">Casos</a></li>
+                <li><a href="./predicciones.html">Predicciones</a></li>
             </ul>
         </nav>
     </header>
-    <main class = "predicciones_grid">
-        <section class = "left_map">
-            <h3></h3>
-            <h1>Suicidios e intentos de suicidios por localidad</h1>
-            <h3></h3>
-            <img src="./unnamed.jpg">
+
+    <main class="predicciones_grid">
+        <section class="left_map">
+            <h1>Mapa de Calor de Intentos de Suicidio en Bogotá</h1>
+            <div class="map-container">
+                <select id="yearSelect" class="year-select">
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+                <div id="map" style="width: 100%; height: 600px;"></div>
+            </div>
         </section>
         <section class="right_databases">
-            <h3></h3>
-            <h1>Suicidios e intentos de Suicidios por localidad</h1>
-            <h3></h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti consectetur at quod ratione alias magni adipisci, veniam assumenda perspiciatis earum accusantium numquam fuga dolorum libero in vitae velit nulla recusandae.</p>
+            <h1>Suicidios e Intentos de Suicidio por Localidad</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, consectetur.</p>
         </section>
     </main>
 
-        <h1>Mapa Interactivo de Localidades</h1>
-    <!-- Contenedor para el mapa -->
-    <div id="map" style="width: 100%; height: 600px;"></div>
-
-    <!-- Incluir JS de Leaflet -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- Incluir archivo con tus datos de localidades en formato JSON -->
-    <script src="datos_localidades.js"></script> <!-- Crea este archivo con tus datos -->
-
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Calor - Casos en Bogotá por Localidad (2012)</title>
-    <!-- Incluir el CSS de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-</head>
-<body>
-    <h1>Mapa de Calor de Casos en Bogotá por Localidad - Año 2012</h1>
-    <div id="map" style="width: 100%; height: 600px;"></div>
-
-    <!-- Incluir el JavaScript de Leaflet y Leaflet.heat -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
-    <!-- Incluir el archivo de datos -->
-    <script src="datos_localidades.js"></script>
-
-    <script>
-        // Inicializar el mapa centrado en Bogotá
-        var map = L.map('map').setView([4.6097, -74.0817], 11);
-
-        // Agregar la capa base de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Crear la capa de calor con los datos de cada localidad
-        var heatData = [
-            { nombre: "Usaquén", coords: [4.7485, -74.0304], casos: 15 },
-            { nombre: "Chapinero", coords: [4.6545, -74.0599], casos: 12 },
-            { nombre: "Santa Fe", coords: [4.6097, -74.0817], casos: 18 },
-            { nombre: "San Cristóbal", coords: [4.5794, -74.0942], casos: 22 },
-            { nombre: "Usme", coords: [4.4844, -74.1232], casos: 25 },
-            { nombre: "Tunjuelito", coords: [4.5604, -74.1384], casos: 10 },
-            { nombre: "Bosa", coords: [4.6348, -74.1855], casos: 27 },
-            { nombre: "Kennedy", coords: [4.6261, -74.1389], casos: 30 },
-            { nombre: "Fontibón", coords: [4.6789, -74.1463], casos: 17 },
-            { nombre: "Engativá", coords: [4.6948, -74.1123], casos: 21 },
-            { nombre: "Suba", coords: [4.7482, -74.1004], casos: 35 },
-            { nombre: "Barrios Unidos", coords: [4.6802, -74.0721], casos: 13 },
-            { nombre: "Teusaquillo", coords: [4.6439, -74.0788], casos: 8 },
-            { nombre: "Los Mártires", coords: [4.6166, -74.0895], casos: 20 },
-            { nombre: "Antonio Nariño", coords: [4.6102, -74.1037], casos: 7 },
-            { nombre: "Puente Aranda", coords: [4.6167, -74.1211], casos: 18 },
-            { nombre: "La Candelaria", coords: [4.6040, -74.0712], casos: 5 },
-            { nombre: "Rafael Uribe Uribe", coords: [4.5610, -74.0987], casos: 23 },
-            { nombre: "Ciudad Bolívar", coords: [4.4845, -74.1384], casos: 28 },
-            { nombre: "Sumapaz", coords: [4.2104, -74.3426], casos: 7 },
-            { nombre: "Bogotá Rural", coords: [4.4964, -74.2030], casos: 6 }
-        ].map(function(dato) {
-            // Cada entrada contiene coordenadas y el número de casos, ajustando intensidad
-            return [dato.coords[0], dato.coords[1], dato.casos / 10];
-        });
-
-        // Añadir la capa de calor al mapa
-        L.heatLayer(heatData, {
-            radius: 30,         // Radio del área de calor
-            blur: 20,           // Suavidad del borde de calor
-            maxZoom: 12,        // Zoom máximo de la capa de calor
-            max: 1              // Factor de intensidad máxima
-        }).addTo(map);
-    </script>
-</body>
-</html>
-
-
     <footer>
-        <ul class="footer-right" >
-            <li>
-                <a href="">Maria Camila Guaqueta</a>
-            </li>
-            <li>
-                <a href="">Juan Diego Peña</a>
-            </li>
-            <li>
-                <a href="">Daniel Felipe Godoy</a>
-            </li>
-            <li>
-                <a href="">Juan Camilo Barragan</a>
-            </li>
+        <ul>
+            <li><a href="#">Maria Camila Guaqueta</a></li>
+            <li><a href="#">Juan Diego Peña</a></li>
+            <li><a href="#">Daniel Felipe Godoy</a></li>
+            <li><a href="#">Juan Camilo Barragan</a></li>
         </ul>
-    </footer> 
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="datos_localidades.js"></script>
 </body>
 </html>
