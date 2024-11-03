@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predicciones</title>
-    <link rel="stylesheet" href="./predicciones.css">
+    <title>Mapa de Calor de Suicidios en Bogotá</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 </head>
-<body class="home-body">
+<body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./casos_actuales.html">Casos</a></li>
-                <li><a href="./predicciones.html">Predicciones</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Casos</a></li>
+                <li><a href="#">Predicciones</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="predicciones_grid">
-        <section class="left_map">
-            <h1>Mapa de Calor de Intentos de Suicidio en Bogotá</h1>
-            <div class="map-container">
-                <select id="yearSelect" class="year-select">
+    <div class="predicciones_grid">
+        <div class="left_map">
+            <h1 class="map-title">Mapa de suicidios</h1>
+            <select id="añoSelector">
                     <option value="2012">2012</option>
                     <option value="2013">2013</option>
                     <option value="2014">2014</option>
