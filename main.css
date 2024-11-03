@@ -95,16 +95,9 @@ a {
     cursor: pointer;
 }
 footer {
-    margin: 0; 
-    display: flex;
-    position: fixed; 
-    justify-content: flex-end;
-    left: 0; /* Alinear a la izquierda */
-    bottom: 0; /* Alinear al fondo */
-    width: 100%; /* Ancho completo */
-    background-color: #202020; /* Asegúrate de que tenga un fondo */
-    padding: 10px; /* Agrega un poco de padding */
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5); 
+    margin: 10px;
+	display: flex;
+    justify-content: flex-end; 
 }
 footer ul li {
     list-style: none;
