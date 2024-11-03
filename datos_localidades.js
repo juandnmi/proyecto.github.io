@@ -216,3 +216,4 @@ document.getElementById('yearSelect').addEventListener('change', function() {
     const selectedYear = this.value;
     updateHeatMap(selectedYear);
 });
+
