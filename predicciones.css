@@ -1,116 +1,116 @@
-d* {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
-
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:#181818;
+    background-color: #181818; /* Color de fondo original */
+}
 
+header {
+    background-color: #202020;
+    display: flex;
 }
-header{
-    background-color:#202020;
-	display: flex-end;
-    justify-content: flex-end; 
-}
-nav{
-    background-color: #373737;
+
+nav {
+    background-color: #373737; /* Color de barra de navegación */
     padding: 10px;
 }
-nav ul{
-	display: flex;
-	padding: 10px;
-    
+
+nav ul {
+    display: flex;
+    padding: 10px;
 }
-nav ul li{
+
+nav ul li {
     margin-right: 3px;
     list-style: none;
     padding: 15px;
 }
-nav ul li:hover{
-    background-color:  #7f7f7f;
+
+nav ul li:hover {
+    background-color: #7f7f7f;
     border-radius: 20px;
 }
 
 nav ul li a {
-	padding:20px;
+    padding: 20px;
     color: #F0EBF5;
     font-size: 25px;
     text-align: center;
 }
 
-.predicciones_grid{
-    display:grid;
+.predicciones_grid {
+    display: grid;
     background-color: white;
-    grid-template-columns: 1fr 1fr;
-    gap:10px;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-right: 15px;
-    padding-left: 15px;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 10px;
+    padding: 30px; /* Espacio alrededor de la cuadrícula */
 }
 
-.left_map{
+.left_map {
     margin: 10px;
     background-color: #e6e9ed;
     padding: 20px;
     border-radius: 8px;
 }
-.left_map h3{
-    border-bottom: 1px solid #cdd2da;
-    padding-bottom: 20px;
-    text-align: center;
-}
-.left_map h1{
+
+.left_map h1 {
     font-size: 25px;
+    text-align: center; /* Centrado del título del mapa */
 }
-.left_map img {
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    padding-top: 20px;
+
+.year-select {
+    margin-bottom: 10px; /* Espacio entre el menú y el mapa */
 }
-.right_databases{
+
+.right_databases {
     margin: 10px;
     background-color: #e6e9ed;
     padding: 20px;
     border-radius: 8px;
 }
-.right_databases h3{
-    border-bottom: 1px solid #cdd2da;
-    padding-bottom: 20px;
-    text-align: center;
-}
 
-.right_databases h1{
+.right_databases h1 {
     font-size: 25px;
 }
 
 .right_databases p {
-    padding:15px 20px;
+    padding: 15px 20px;
     font-size: 25px;
 }
+
 a {
     text-decoration: none;
     cursor: pointer;
 }
-footer{
+
+footer {
     margin: 10px;
-	display: flex;
-    justify-content: flex-end; 
+    display: flex;
+    justify-content: flex-end; /* Coloca los nombres a la derecha */
 }
-footer ul li {
+
+footer ul {
+    display: flex;
+    flex-direction: column; /* Coloca los nombres en una columna */
     list-style: none;
 }
+
+footer ul li {
+    margin-bottom: 5px; /* Espacio entre los nombres */
+}
+
 footer ul li a {
-	padding:20px;
+    padding: 20px;
     color: #F0EBF5;
     font-size: 10px;
-    
 }
