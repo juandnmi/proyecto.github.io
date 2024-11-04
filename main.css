@@ -1,112 +1,124 @@
+/* Reset y estructura general */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
 }
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-	background-color:#181818;
-    
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #f5f5f5;
 }
+
+/* Estilos de navegación */
 header {
-     background-color:#202020;
-	display: flex-end;
-    justify-content: flex-end; 
+    background-color: #33334d;
+    padding: 10px 0;
 }
-nav {
-    background-color: #373737;
-    padding: 10px;
-}
+
 nav ul {
     display: flex;
-    padding: 10px;
-}
-nav ul li {
-    margin-right: 3px;
+    justify-content: center;
     list-style: none;
-    padding: 15px;
 }
-nav ul li:hover {
-    background-color:  #7f7f7f;
-    border-radius: 20px;
+
+nav ul li {
+    margin: 0 15px;
 }
+
 nav ul li a {
-    padding:20px;
-    color: #F0EBF5;
-    font-size: 25px;
-    text-align: center;
+    color: #f5f5f5;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #6a67ce;
+}
+
+/* Estilo de la sección principal */
 .home_main_grid {
     display: grid;
-    background-color: white;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 30px 15px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px;
 }
+
+.left_databases {
+    background-color: #29293d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left_databases h2 {
+    font-size: 2.4rem;
+    color: #e5e5f7;
+    margin-bottom: 20px;
+}
+
+.left_databases ul li {
+    margin-bottom: 20px;
+}
+
+.left_databases ul li h3 a {
+    font-size: 2rem;
+    color: #c8c8d1;
+    text-decoration: none;
+}
+
+.left_databases ul li p {
+    font-size: 1.6rem;
+    color: #c8c8d1;
+    margin: 10px 0;
+}
+
 .download-link {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
+    font-size: 1.4rem;
     text-decoration: none;
     border-radius: 6px;
-    margin: 10px;
+    transition: background-color 0.3s;
 }
+
 .download-link:hover {
     background-color: #45a049;
 }
-.left_databases {
-    margin: 10px;
-    background-color: #e6e9ed;
-    border-radius: 8px;
-    padding: 20px;
-}
-.left_databases ul li {
-    list-style: none;
-}
-.left_databases ul li h3 {
-    border-bottom: 1px solid #cdd2da;
-    padding-bottom: 20px;
-    text-align: center;
-}
-.left_databases ul li p {
-    font-size: 25px;
-    padding: 15px 20px;
-}
-.right_objectives {
-    margin: 10px;
-    background-color: #e6e9ed;
-    border-radius: 8px;
-    padding: 20px;
-}
-.right_objectives h3 { 
-    border-bottom: 1px solid #cdd2da;
-    padding-bottom: 20px;
-    text-align: center;
-}
-.right_objectives p {
-    font-size: 25px;
-    padding: 15px 20px;
-}
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
+
+/* Footer */
 footer {
-    margin: 10px;
-	display: flex;
-    justify-content: flex-end; 
+    background-color: #33334d;
+    padding: 20px;
+    text-align: center;
+    color: #f5f5f5;
 }
-footer ul li {
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     list-style: none;
 }
-footer ul li a {
-    padding: 20px;
-    color: #F0EBF5;
-    font-size: 10px;
+
+.footer-links li a {
+    color: #f5f5f5;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #6a67ce;
 }
